@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, MessageCircle, Star, Zap } from 'lucide-react';
 
-const Pricing = () => {
+const Packages = () => {
   const plans = [
     {
       name: 'Monthly',
@@ -83,7 +83,7 @@ const Pricing = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Simple & Transparent
-            <span className="bg-gradient-primary bg-clip-text text-transparent"> IPTV Pricing</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent"> IPTV Packages</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Choose the perfect plan for your streaming needs. All plans include the same premium features.
@@ -91,7 +91,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Packages Cards */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -185,4 +185,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Packages;

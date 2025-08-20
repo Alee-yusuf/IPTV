@@ -10,7 +10,7 @@ const Reseller = () => {
     {
       icon: <DollarSign className="h-6 w-6 text-white" />,
       title: 'High Profit Margins',
-      description: 'Earn up to 70% profit on every sale with our competitive wholesale pricing.'
+      description: 'Earn up to 70% profit on every sale with our competitive wholesale Packages.'
     },
     {
       icon: <Zap className="h-6 w-6 text-white" />,
@@ -179,7 +179,7 @@ const Reseller = () => {
         </div>
       </section>
 
-      {/* Pricing Plans */}
+      {/* Packages Plans */}
       <section className="py-16 bg-surface">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">

@@ -32,7 +32,7 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold">Quick Links</h4>
             <nav className="space-y-2">
               {[
-                { name: 'Pricing Plans', path: '/pricing' },
+                { name: 'Packages Plans', path: '/Packages' },
                 { name: 'Setup Guide', path: '/setup' },
                 { name: 'Channel List', path: '/channels' },
                 { name: 'Reseller Program', path: '/reseller' },

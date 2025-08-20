@@ -47,7 +47,7 @@ const Index = () => {
     }
   ];
 
-  const pricingPlans = [
+  const PackagesPlans = [
     {
       name: 'Monthly',
       price: '$15',
@@ -188,8 +188,8 @@ const Index = () => {
                 Start Streaming Now
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                <Link to="/pricing" className="flex items-center">
-                  See Pricing
+                <Link to="/Packages" className="flex items-center">
+                  See Packages
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -228,12 +228,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Preview */}
+      {/* Packages Preview */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Simple Pricing Plans
+              Simple Packages Plans
             </h2>
             <p className="text-xl text-muted-foreground">
               Choose the perfect plan for your streaming needs
@@ -241,7 +241,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {pricingPlans.map((plan, index) => (
+            {PackagesPlans.map((plan, index) => (
               <Card 
                 key={plan.name} 
                 className={`glass-card hover-lift text-center relative ${
@@ -274,7 +274,7 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Link to="/pricing">
+            <Link to="/Packages">
               <Button variant="outline" size="lg">
                 View All Features
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -334,24 +334,34 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {setupSteps.map((step, index) => (
-                <div key={index} className="text-center relative">
-                  {index < setupSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-primary transform -translate-x-1/2" />
-                  )}
-                  <div className="relative">
-                    <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6">
-                      {step.icon}
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-surface border-2 border-primary rounded-full flex items-center justify-center text-primary font-bold text-sm">
+            <div className="relative">
+              {/* Mobile vertical line */}
+              <div className="absolute left-8 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/30 md:hidden pointer-events-none z-0" />
+              {/* Desktop horizontal line */}
+              <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-white/20 via-white/10 to-white/20 pointer-events-none z-0" />
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {setupSteps.map((step, index) => (
+                  <div key={index} className="relative md:text-center pl-16 md:pl-0 group">
+                    {/* Dot on line (mobile) with number */}
+                    <div className="md:hidden absolute left-8 top-12 -translate-x-1/2 w-6 h-6 rounded-full bg-primary text-white text-[11px] font-semibold flex items-center justify-center ring-4 ring-primary/20 transition-transform duration-200 group-hover:scale-110 z-10">
                       {step.step}
                     </div>
+                    {/* Dot on line (desktop) with number */}
+                    <div className="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white text-xs font-semibold items-center justify-center ring-4 ring-white/30 border-2 border-white/60 drop-shadow-md transition-transform duration-200 group-hover:scale-110 z-20">
+                      {step.step}
+                    </div>
+
+                    <div className="relative">
+                      <div className="md:mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mt-8 md:mt-10 mb-2 md:mb-6 shadow-lg shadow-black/10">
+                        {step.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2 md:mb-4">{step.title}</h3>
+                    <p className="text-muted-foreground">{step.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -452,7 +462,7 @@ const Index = () => {
               Order on WhatsApp
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-8 py-6">
-              <Link to="/pricing" className="flex items-center">
+              <Link to="/Packages" className="flex items-center">
                 View All Plans
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
