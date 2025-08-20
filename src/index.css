@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium IPTV Design System - Dark Theme with Teal-Blue Gradients */
+
+@layer base {
+  :root {
+    /* Dark Theme Base Colors */
+    --background: 220 13% 4%;        /* #0A0A0B - Deep dark */
+    --foreground: 0 0% 100%;         /* #FFFFFF - Pure white */
+
+    --surface: 220 13% 7%;           /* #111112 - Elevated dark */
+    --surface-accent: 220 13% 10%;   /* #1A1A1B - Card backgrounds */
+
+    --card: 220 13% 7%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 13% 7%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Premium Brand Colors */
+    --primary: 168 84% 39%;          /* #14B8A6 - Teal */
+    --primary-foreground: 0 0% 100%;
+    --primary-accent: 168 84% 45%;   /* Lighter teal */
+    
+    --secondary: 217 91% 60%;        /* #3B82F6 - Blue */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Glassmorphism & Effects */
+    --glass: 220 13% 10% / 0.8;      /* Semi-transparent surface */
+    --glass-border: 0 0% 100% / 0.1; /* Subtle white border */
+    
+    /* Text Hierarchy */
+    --muted: 220 9% 46%;             /* #737373 - Body text */
+    --muted-foreground: 220 9% 66%;  /* #A3A3A3 - Lighter body */
+
+    --accent: 168 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 15%;           /* #252527 - Subtle borders */
+    --input: 220 13% 15%;
+    --ring: 168 84% 39%;
+
+    --radius: 0.75rem;               /* Softer corners */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--surface)), hsl(var(--surface-accent)));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(var(--primary) / 0.15), transparent 70%);
+    
+    /* Shadows & Effects */
+    --shadow-premium: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-glass: 0 8px 32px hsl(220 13% 4% / 0.3);
+    --glow-primary: 0 0 40px hsl(var(--primary) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --sidebar-background: 220 13% 4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 168 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 13% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 13% 15%;
+    --sidebar-ring: 168 84% 39%;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism Components */
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-glass;
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .premium-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .surface-gradient {
+    background: var(--gradient-surface);
+  }
+  
+  /* Animation Classes */
+  .animate-fade-up {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+  
+  .animate-fade-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-2;
+  }
+  
+  .hover-glow {
+    @apply transition-shadow duration-300 ease-out;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--glow-primary);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
